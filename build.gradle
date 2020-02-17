@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url 'http://repo.spring.io/milestone' }
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'http://repo.maven.apache.org/maven2' }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+    compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure'
+    compile group: 'org.springframework.boot', name: 'spring-boot-loader-tools'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-logging'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-aop
+    compile group: 'org.springframework', name: 'spring-aop', version: '5.2.2.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-aspects
+    compile group: 'org.springframework', name: 'spring-aspects', version: '3.2.0.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.2.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.2.RELEASE'
+
+    compile group : 'mysql', name: 'mysql-connector-java', 'version' : '8.0.16'
+    
+    compile("com.zaxxer:HikariCP:2.4.6") {
+        exclude(module: 'tools')
+    }
+
+}

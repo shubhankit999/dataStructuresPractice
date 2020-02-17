@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: rel
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306?useUnicode=true&character_set_server=utf8mb4
+    name:
+    username: root
+    password:
+
+
+server:
+  port: 8080
+
+
